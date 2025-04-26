@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PushWallet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #ffffff;
+    }
+    header, section, footer {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header {
+      background: linear-gradient(135deg, #00c853, #00bfa5);
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .buttons button {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .buttons button:hover {
+      background: #333;
+    }
+    .features {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+    .feature {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .feature h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .feature p {
+      font-size: 16px;
+      color: #ccc;
+    }
+    .visuals img {
+      width: 300px;
+      margin: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .trust {
+      background: #0d0d0d;
+      padding: 40px 20px;
+      font-size: 18px;
+    }
+    footer {
+      background: #000;
+      font-size: 14px;
+      color: #777;
+    }
+    footer a {
+      color: #777;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Move your money. Your way.</h1>
+  <p>Send. Spend. Save. Simplified.</p>
+  <div class="buttons">
+    <button onclick="download('iOS')">Download for iOS</button>
+    <button onclick="download('Android')">Download for Android</button>
+  </div>
+</header>
+
+<section class="features">
+  <div class="feature">
+    <h2>🔗 Instant Transfers</h2>
+    <p>Move money in seconds.</p>
+  </div>
+  <div class="feature">
+    <h2>💳 PushWallet Card</h2>
+    <p>Spend directly from your balance.</p>
+  </div>
+  <div class="feature">
+    <h2>🛡️ Secure & Private</h2>
+    <p>Bank-level encryption. No nonsense.</p>
+  </div>
+</section>
+
+<section class="visuals">
+  <img src="https://via.placeholder.com/300x600?text=App+Screen" alt="PushWallet App Screen">
+  <img src="https://via.placeholder.com/300x600?text=Card+Screen" alt="PushWallet Card Screen">
+</section>
+
+<section class="trust">
+  <p><strong>Millions trust PushWallet every day.</strong><br>Safe, secure, and built to work for you.</p>
+</section>
+
+<section>
+  <h1>Get PushWallet today.</h1>
+  <p>Download now and take control.</p>
+  <div class="buttons">
+    <button onclick="download('iOS')">Download for iOS</button>
+    <button onclick="download('Android')">Download for Android</button>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 PushWallet. All rights reserved.</p>
+  <p>
+    <a href="#">About</a>|
+    <a href="#">Careers</a>|
+    <a href="#">Privacy</a>|
+    <a href="#">Support</a>
+  </p>
+</footer>
+
+<script>
+function download(platform) {
+  alert('Redirecting to download PushWallet for ' + platform + '!');
+  // You can replace this with actual redirects later.
+}
+</script>
+
+</body>
+</html>
