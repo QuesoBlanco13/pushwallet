@@ -1,155 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PushWallet</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0b0b;
-      color: #ffffff;
-    }
-    header, section, footer {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header {
-      background: linear-gradient(135deg, #00c853, #00bfa5);
-    }
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 20px;
-      margin-bottom: 40px;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .buttons button {
-      background: #000;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .buttons button:hover {
-      background: #333;
-    }
-    .features {
-      background: #111;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      padding: 60px 20px;
-    }
-    .feature {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .feature h2 {
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-    .feature p {
-      font-size: 16px;
-      color: #ccc;
-    }
-    .visuals img {
-      width: 300px;
-      margin: 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    }
-    .trust {
-      background: #0d0d0d;
-      padding: 40px 20px;
-      font-size: 18px;
-    }
-    footer {
-      background: #000;
-      font-size: 14px;
-      color: #777;
-    }
-    footer a {
-      color: #777;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Envelope Budget System (Saved)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .money, .envelopes, .create-envelope {
+            margin-bottom: 20px;
+        }
+        .envelope {
+            padding: 10px;
+            background: #e1f5fe;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Move your money. Your way.</h1>
-  <p>Send. Spend. Save. Simplified.</p>
-  <div class="buttons">
-    <button onclick="download('iOS')">Download for iOS</button>
-    <button onclick="download('Android')">Download for Android</button>
-  </div>
-</header>
+<div class="container">
+    <h1>Envelope Budget System</h1>
 
-<section class="features">
-  <div class="feature">
-    <h2>🔗 Instant Transfers</h2>
-    <p>Move money in seconds.</p>
-  </div>
-  <div class="feature">
-    <h2>💳 PushWallet Card</h2>
-    <p>Spend directly from your balance.</p>
-  </div>
-  <div class="feature">
-    <h2>🛡️ Secure & Private</h2>
-    <p>Bank-level encryption. No nonsense.</p>
-  </div>
-</section>
+    <div class="money">
+        <h2>Total Money: $<span id="totalMoney">0.00</span></h2>
+        <input type="number" id="addMoneyInput" placeholder="Enter amount to add">
+        <button onclick="addMoney()">Add Money</button>
+    </div>
 
-<section class="visuals">
-  <img src="https://via.placeholder.com/300x600?text=App+Screen" alt="PushWallet App Screen">
-  <img src="https://via.placeholder.com/300x600?text=Card+Screen" alt="PushWallet Card Screen">
-</section>
+    <div class="create-envelope">
+        <h2>Create Envelope</h2>
+        <input type="text" id="envelopeNameInput" placeholder="Envelope name">
+        <input type="number" id="envelopeAmountInput" placeholder="Amount to allocate">
+        <button onclick="createEnvelope()">Create Envelope</button>
+    </div>
 
-<section class="trust">
-  <p><strong>Millions trust PushWallet every day.</strong><br>Safe, secure, and built to work for you.</p>
-</section>
-
-<section>
-  <h1>Get PushWallet today.</h1>
-  <p>Download now and take control.</p>
-  <div class="buttons">
-    <button onclick="download('iOS')">Download for iOS</button>
-    <button onclick="download('Android')">Download for Android</button>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 PushWallet. All rights reserved.</p>
-  <p>
-    <a href="#">About</a>|
-    <a href="#">Careers</a>|
-    <a href="#">Privacy</a>|
-    <a href="#">Support</a>
-  </p>
-</footer>
+    <div class="envelopes">
+        <h2>Envelopes</h2>
+        <div id="envelopeList"></div>
+    </div>
+</div>
 
 <script>
-function download(platform) {
-  alert('Redirecting to download PushWallet for ' + platform + '!');
-  // You can replace this with actual redirects later.
-}
+    let totalMoney = 0;
+    let envelopes = [];
+
+    // Load from localStorage
+    window.onload = function() {
+        const savedMoney = localStorage.getItem('totalMoney');
+        const savedEnvelopes = localStorage.getItem('envelopes');
+        
+        if (savedMoney) totalMoney = parseFloat(savedMoney);
+        if (savedEnvelopes) envelopes = JSON.parse(savedEnvelopes);
+
+        updateDisplay();
+    };
+
+    function updateDisplay() {
+        document.getElementById('totalMoney').innerText = totalMoney.toFixed(2);
+        const envelopeList = document.getElementById('envelopeList');
+        envelopeList.innerHTML = '';
+
+        envelopes.forEach((env, index) => {
+            const div = document.createElement('div');
+            div.className = 'envelope';
+            div.innerHTML = `<strong>${env.name}</strong>: $${env.amount.toFixed(2)}
+                <button onclick="deleteEnvelope(${index})" style="background:#dc3545;margin-top:5px;">Delete</button>`;
+            envelopeList.appendChild(div);
+        });
+
+        saveData(); // Save every time we update
+    }
+
+    function addMoney() {
+        const input = document.getElementById('addMoneyInput');
+        const amount = parseFloat(input.value);
+        if (!isNaN(amount) && amount > 0) {
+            totalMoney += amount;
+            input.value = '';
+            updateDisplay();
+        } else {
+            alert('Please enter a valid amount.');
+        }
+    }
+
+    function createEnvelope() {
+        const nameInput = document.getElementById('envelopeNameInput');
+        const amountInput = document.getElementById('envelopeAmountInput');
+
+        const name = nameInput.value.trim();
+        const amount = parseFloat(amountInput.value);
+
+        if (name && !isNaN(amount) && amount > 0) {
+            if (amount > totalMoney) {
+                alert('Not enough total money to allocate.');
+                return;
+            }
+            envelopes.push({ name: name, amount: amount });
+            totalMoney -= amount;
+            nameInput.value = '';
+            amountInput.value = '';
+            updateDisplay();
+        } else {
+            alert('Please enter valid envelope name and amount.');
+        }
+    }
+
+    function deleteEnvelope(index) {
+        const envelope = envelopes[index];
+        totalMoney += envelope.amount; // Return money back
+        envelopes.splice(index, 1);
+        updateDisplay();
+    }
+
+    function saveData() {
+        localStorage.setItem('totalMoney', totalMoney);
+        localStorage.setItem('envelopes', JSON.stringify(envelopes));
+    }
 </script>
 
 </body>
